@@ -60,6 +60,8 @@ type
     procedure BtnExcluirClick(Sender: TObject);
     procedure EdtSubGrupoExit(Sender: TObject);
     procedure BtnSubGrupoClick(Sender: TObject);
+    procedure EdtSubGrupoEnter(Sender: TObject);
+    procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
   private
     { Private declarations }
   public
@@ -195,9 +197,24 @@ begin
 
 	Result := qry.FieldByName('NOME').AsString;
 end;
+procedure TFrmprincipal.EdtSubGrupoEnter(Sender: TObject);
+begin
+EdTDescricao.text := DescricaoGrupo(StrToInt(EdtSubGrupo.text));
+end;
+
 procedure TFrmprincipal.EdtSubGrupoExit(Sender: TObject);
 begin
-  EdTDescricao.text := DescricaoGrupo(StrToInt(EdtSubGrupo.text));
+  //EdTDescricao.text := DescricaoGrupo(StrToInt(EdtSubGrupo.text));
+end;
+
+procedure TFrmprincipal.FormKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+  if Key=VK_F4 then
+  begin
+  frmconsub := Tfrmconsub.Create(Application);
+  frmconsub.Show;
+  end;
 end;
 
 procedure TFrmprincipal.FormKeyPress(Sender: TObject; var Key: Char);

@@ -13,6 +13,7 @@ object Frmprincipal: TFrmprincipal
   KeyPreview = True
   OldCreateOrder = False
   Position = poDesktopCenter
+  OnKeyDown = FormKeyDown
   OnKeyPress = FormKeyPress
   PixelsPerInch = 96
   TextHeight = 13
@@ -101,6 +102,7 @@ object Frmprincipal: TFrmprincipal
         Width = 57
         Height = 21
         TabOrder = 2
+        OnEnter = EdtSubGrupoEnter
         OnExit = EdtSubGrupoExit
       end
       object BtnSubGrupo: TBitBtn
@@ -799,6 +801,7 @@ object Frmprincipal: TFrmprincipal
       'Server=LOCALHOST'
       'Port=3050'
       'DriverID=FB')
+    Connected = True
     LoginPrompt = False
     Left = 360
     Top = 8
