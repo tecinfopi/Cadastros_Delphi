@@ -59,6 +59,7 @@ type
     procedure BitBtn2Click(Sender: TObject);
     procedure BtnExcluirClick(Sender: TObject);
     procedure EdtSubGrupoExit(Sender: TObject);
+    procedure BtnSubGrupoClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -73,6 +74,8 @@ var
 implementation
 
 {$R *.dfm}
+
+uses uconsultasubgrupo;
 
 procedure TFrmprincipal.BitBtn1Click(Sender: TObject);
 begin
@@ -165,6 +168,12 @@ begin
     ShowMessage('Registro inserido com sucesso....');
     limparedits;
   end;
+end;
+
+procedure TFrmprincipal.BtnSubGrupoClick(Sender: TObject);
+begin
+  frmconsub := Tfrmconsub.Create(Application);
+  frmconsub.Show;
 end;
 
 procedure TFrmprincipal.DBGrid1DblClick(Sender: TObject);

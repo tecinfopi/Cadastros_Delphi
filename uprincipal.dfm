@@ -110,6 +110,7 @@ object Frmprincipal: TFrmprincipal
         Height = 21
         Caption = '...'
         TabOrder = 3
+        OnClick = BtnSubGrupoClick
       end
       object EdTDescricao: TEdit
         Left = 212
@@ -127,10 +128,6 @@ object Frmprincipal: TFrmprincipal
     object TabSheet2: TTabSheet
       Caption = '&Buscar - F3'
       ImageIndex = 1
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object Label1: TLabel
         Left = 5
         Top = 9
@@ -794,8 +791,8 @@ object Frmprincipal: TFrmprincipal
   object FDConnection1: TFDConnection
     Params.Strings = (
       
-        'Database=C:\Users\Familia\Documents\Projetos\Projeto_Pesquisa\Ba' +
-        'nco\BANCO.FDB'
+        'Database=C:\Users\Familia\Documents\Projetos\Projeto_Pesquisa\Ca' +
+        'dastros_Delphi\Banco\BANCO.FDB'
       'User_Name=SYSDBA'
       'Password=masterkey'
       'Protocol=TCPIP'
