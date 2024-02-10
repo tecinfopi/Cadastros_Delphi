@@ -1,7 +1,7 @@
 object Frmprincipal: TFrmprincipal
   Left = 0
   Top = 0
-  Caption = 'USAR COMBOBOX Vers'#227'o 1.4'
+  Caption = 'USAR COMBOBOX Vers'#227'o 1.5'
   ClientHeight = 363
   ClientWidth = 605
   Color = clBtnFace
@@ -27,9 +27,10 @@ object Frmprincipal: TFrmprincipal
     TabOrder = 0
     object TabSheet1: TTabSheet
       Caption = '&Cadastrar - F2'
+      ExplicitTop = 23
       object Label5: TLabel
         Left = 136
-        Top = 24
+        Top = 21
         Width = 335
         Height = 23
         Caption = 'MANIPUNALDO DADOS NOS EDTIS'
@@ -41,8 +42,8 @@ object Frmprincipal: TFrmprincipal
         ParentFont = False
       end
       object Label6: TLabel
-        Left = 48
-        Top = 91
+        Left = 52
+        Top = 83
         Width = 50
         Height = 13
         Caption = 'C'#243'digo .: '
@@ -54,8 +55,8 @@ object Frmprincipal: TFrmprincipal
         ParentFont = False
       end
       object Label7: TLabel
-        Left = 48
-        Top = 139
+        Left = 52
+        Top = 131
         Width = 44
         Height = 13
         Caption = 'Nome .: '
@@ -67,8 +68,8 @@ object Frmprincipal: TFrmprincipal
         ParentFont = False
       end
       object lblsubhgrupo: TLabel
-        Left = 48
-        Top = 187
+        Left = 52
+        Top = 179
         Width = 67
         Height = 13
         Caption = 'SubGrupo .: '
@@ -80,8 +81,8 @@ object Frmprincipal: TFrmprincipal
         ParentFont = False
       end
       object EdtCodigo: TEdit
-        Left = 120
-        Top = 88
+        Left = 124
+        Top = 80
         Width = 121
         Height = 21
         CharCase = ecUpperCase
@@ -89,16 +90,16 @@ object Frmprincipal: TFrmprincipal
         TabOrder = 0
       end
       object EdtNome: TEdit
-        Left = 120
-        Top = 133
+        Left = 124
+        Top = 125
         Width = 417
         Height = 21
         CharCase = ecUpperCase
         TabOrder = 1
       end
       object EdtSubGrupo: TEdit
-        Left = 120
-        Top = 184
+        Left = 124
+        Top = 176
         Width = 57
         Height = 21
         NumbersOnly = True
@@ -108,8 +109,8 @@ object Frmprincipal: TFrmprincipal
         OnExit = EdtSubGrupoExit
       end
       object BtnSubGrupo: TBitBtn
-        Left = 182
-        Top = 184
+        Left = 186
+        Top = 176
         Width = 25
         Height = 21
         Caption = '...'
@@ -117,16 +118,26 @@ object Frmprincipal: TFrmprincipal
         OnClick = BtnSubGrupoClick
       end
       object EdTDescricao: TEdit
-        Left = 212
-        Top = 184
+        Left = 216
+        Top = 176
         Width = 325
         Height = 21
-        BevelInner = bvNone
         BevelKind = bkFlat
-        BevelOuter = bvNone
         BorderStyle = bsNone
         Color = clInfoBk
+        Ctl3D = False
+        Enabled = False
+        ParentCtl3D = False
         TabOrder = 4
+      end
+      object dbnvgrnavegador: TDBNavigator
+        Left = 52
+        Top = 203
+        Width = 485
+        Height = 38
+        DataSource = DSdados
+        VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast, nbRefresh]
+        TabOrder = 5
       end
     end
     object TabSheet2: TTabSheet

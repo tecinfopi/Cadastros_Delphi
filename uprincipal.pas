@@ -40,7 +40,7 @@ uses
   FireDAC.Phys.FB,
   FireDAC.Phys.FBDef,
   FireDAC.Phys.IBBase,
-  System.IniFiles;
+  System.IniFiles, Vcl.DBCtrls;
 
 type
   TFrmprincipal = class(TForm)
@@ -80,6 +80,7 @@ type
     EdTDescricao: TEdit;
     Qry: TFDQuery;
     BtnImprimir: TBitBtn;
+    dbnvgrnavegador: TDBNavigator;
     procedure BitBtn1Click(Sender: TObject);
     procedure FormKeyPress(Sender: TObject; var Key: Char);
     procedure BtnSalvarClick(Sender: TObject);
@@ -199,6 +200,11 @@ begin
     ExecSQL;
     ShowMessage('Registro inserido com sucesso....');
     limparedits;
+    if EdTDescricao.Text = '' then
+    begin
+    ShowMessage('Campos não pode ser vázio');
+    EdTDescricao.SetFocus;
+    end;
   end;
 end;
 
