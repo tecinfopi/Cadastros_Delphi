@@ -59,10 +59,10 @@ begin
      end;
      end;
      Open;
-     //Label3.Caption := IntToStr(RecordCount);
+     //pnltop.Caption := zQRY.Fields.
      if zQRY.RecordCount = 0 then
      ShowMessage('Registro não encontrado....');
-    end;
+     end;
 end;
 
 procedure Tfrmconsub.dbgrdDblClick(Sender: TObject);

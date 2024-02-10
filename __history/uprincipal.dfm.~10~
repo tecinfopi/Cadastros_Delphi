@@ -1,7 +1,7 @@
 object Frmprincipal: TFrmprincipal
   Left = 0
   Top = 0
-  Caption = 'USAR COMBOBOX Vers'#227'o 1.3'
+  Caption = 'USAR COMBOBOX Vers'#227'o 1.4'
   ClientHeight = 363
   ClientWidth = 605
   Color = clBtnFace
@@ -13,6 +13,8 @@ object Frmprincipal: TFrmprincipal
   KeyPreview = True
   OldCreateOrder = False
   Position = poDesktopCenter
+  OnCreate = FormCreate
+  OnKeyDown = FormKeyDown
   OnKeyPress = FormKeyPress
   PixelsPerInch = 96
   TextHeight = 13
@@ -21,12 +23,11 @@ object Frmprincipal: TFrmprincipal
     Top = 41
     Width = 605
     Height = 281
-    ActivePage = TabSheet2
+    ActivePage = TabSheet1
     Align = alClient
     TabOrder = 0
     object TabSheet1: TTabSheet
       Caption = '&Cadastrar - F2'
-      ExplicitTop = 23
       object Label5: TLabel
         Left = 136
         Top = 24
@@ -102,6 +103,8 @@ object Frmprincipal: TFrmprincipal
         Width = 57
         Height = 21
         TabOrder = 2
+        OnChange = EdtSubGrupoChange
+        OnEnter = EdtSubGrupoEnter
         OnExit = EdtSubGrupoExit
       end
       object BtnSubGrupo: TBitBtn
@@ -111,11 +114,12 @@ object Frmprincipal: TFrmprincipal
         Height = 21
         Caption = '...'
         TabOrder = 3
+        OnClick = BtnSubGrupoClick
       end
       object EdTDescricao: TEdit
         Left = 212
         Top = 184
-        Width = 315
+        Width = 325
         Height = 21
         BevelInner = bvNone
         BevelKind = bkFlat
@@ -791,8 +795,8 @@ object Frmprincipal: TFrmprincipal
   object FDConnection1: TFDConnection
     Params.Strings = (
       
-        'Database=C:\Users\Familia\Documents\Projetos\Projeto_Pesquisa\Ba' +
-        'nco\BANCO.FDB'
+        'Database=C:\Users\Familia\Documents\Projetos\Projeto_Pesquisa\Ca' +
+        'dastros_Delphi\Banco\BANCO.FDB'
       'User_Name=SYSDBA'
       'Password=masterkey'
       'Protocol=TCPIP'
@@ -818,8 +822,8 @@ object Frmprincipal: TFrmprincipal
   end
   object FDPhysFBDriverLink1: TFDPhysFBDriverLink
     VendorLib = 
-      'C:\Users\Familia\Documents\Projetos\Projeto_Pesquisa\Dll\fbclien' +
-      't.dll'
+      'C:\Users\Familia\Documents\Projetos\Projeto_Pesquisa\Cadastros_D' +
+      'elphi\Dll\fbclient.dll'
     Left = 480
     Top = 8
   end

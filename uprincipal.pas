@@ -3,15 +3,44 @@ unit uprincipal;
 interface
 
 uses
-  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.ComCtrls, Data.DB,
-  Vcl.Grids, Vcl.DBGrids, Vcl.StdCtrls, Vcl.Buttons, FireDAC.Stan.Intf,
-  FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS,
-  FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt,
-  FireDAC.Phys.MySQLDef, FireDAC.UI.Intf, FireDAC.Stan.Def, FireDAC.Stan.Pool,
-  FireDAC.Phys, FireDAC.Phys.MySQL, FireDAC.VCLUI.Wait, FireDAC.Comp.Client,
-  FireDAC.Comp.DataSet, ZAbstractConnection, ZConnection, FireDAC.Phys.FB,
-  FireDAC.Phys.FBDef, FireDAC.Phys.IBBase;
+  Winapi.Windows,
+  Winapi.Messages,
+  System.SysUtils,
+  System.Variants,
+  System.Classes,
+  Vcl.Graphics,
+  Vcl.Controls,
+  Vcl.Forms,
+  Vcl.Dialogs,
+  Vcl.ExtCtrls,
+  Vcl.ComCtrls,
+  Data.DB,
+  Vcl.Grids,
+  Vcl.DBGrids,
+  Vcl.StdCtrls,
+  Vcl.Buttons,
+  FireDAC.Stan.Intf,
+  FireDAC.Stan.Option,
+  FireDAC.Stan.Param,
+  FireDAC.Stan.Error,
+  FireDAC.DatS,
+  FireDAC.Phys.Intf,
+  FireDAC.DApt.Intf,
+  FireDAC.Stan.Async,
+  FireDAC.DApt,
+  FireDAC.Phys.MySQLDef,
+  FireDAC.UI.Intf,
+  FireDAC.Stan.Def,
+  FireDAC.Stan.Pool,
+  FireDAC.Phys,
+  FireDAC.Phys.MySQL,
+  FireDAC.VCLUI.Wait,
+  FireDAC.Comp.Client,
+  FireDAC.Comp.DataSet,
+  FireDAC.Phys.FB,
+  FireDAC.Phys.FBDef,
+  FireDAC.Phys.IBBase,
+  System.IniFiles;
 
 type
   TFrmprincipal = class(TForm)
@@ -29,7 +58,6 @@ type
     FDConnection1: TFDConnection;
     FDQuery1: TFDQuery;
     DataSource1: TDataSource;
-    FDPhysFBDriverLink1: TFDPhysFBDriverLink;
     Label3: TLabel;
     Label4: TLabel;
     BtnSalvar: TBitBtn;
@@ -51,6 +79,7 @@ type
     BtnSubGrupo: TBitBtn;
     EdTDescricao: TEdit;
     Qry: TFDQuery;
+    BtnImprimir: TBitBtn;
     procedure BitBtn1Click(Sender: TObject);
     procedure FormKeyPress(Sender: TObject; var Key: Char);
     procedure BtnSalvarClick(Sender: TObject);
@@ -62,6 +91,7 @@ type
     procedure BtnSubGrupoClick(Sender: TObject);
     procedure EdtSubGrupoEnter(Sender: TObject);
     procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+    procedure EdtSubGrupoChange(Sender: TObject);
   private
     { Private declarations }
   public
@@ -197,16 +227,20 @@ begin
 
 	Result := qry.FieldByName('NOME').AsString;
 end;
-procedure TFrmprincipal.EdtSubGrupoEnter(Sender: TObject);
+procedure TFrmprincipal.EdtSubGrupoChange(Sender: TObject);
 begin
 EdTDescricao.text := DescricaoGrupo(StrToInt(EdtSubGrupo.text));
+end;
+
+procedure TFrmprincipal.EdtSubGrupoEnter(Sender: TObject);
+begin
+//EdTDescricao.text := DescricaoGrupo(StrToInt(EdtSubGrupo.text));
 end;
 
 procedure TFrmprincipal.EdtSubGrupoExit(Sender: TObject);
 begin
   //EdTDescricao.text := DescricaoGrupo(StrToInt(EdtSubGrupo.text));
 end;
-
 procedure TFrmprincipal.FormKeyDown(Sender: TObject; var Key: Word;
   Shift: TShiftState);
 begin

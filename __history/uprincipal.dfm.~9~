@@ -13,6 +13,8 @@ object Frmprincipal: TFrmprincipal
   KeyPreview = True
   OldCreateOrder = False
   Position = poDesktopCenter
+  OnCreate = FormCreate
+  OnKeyDown = FormKeyDown
   OnKeyPress = FormKeyPress
   PixelsPerInch = 96
   TextHeight = 13
@@ -101,6 +103,8 @@ object Frmprincipal: TFrmprincipal
         Width = 57
         Height = 21
         TabOrder = 2
+        OnChange = EdtSubGrupoChange
+        OnEnter = EdtSubGrupoEnter
         OnExit = EdtSubGrupoExit
       end
       object BtnSubGrupo: TBitBtn
@@ -110,11 +114,12 @@ object Frmprincipal: TFrmprincipal
         Height = 21
         Caption = '...'
         TabOrder = 3
+        OnClick = BtnSubGrupoClick
       end
       object EdTDescricao: TEdit
         Left = 212
         Top = 184
-        Width = 315
+        Width = 325
         Height = 21
         BevelInner = bvNone
         BevelKind = bkFlat
@@ -127,10 +132,6 @@ object Frmprincipal: TFrmprincipal
     object TabSheet2: TTabSheet
       Caption = '&Buscar - F3'
       ImageIndex = 1
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object Label1: TLabel
         Left = 5
         Top = 9
@@ -794,14 +795,15 @@ object Frmprincipal: TFrmprincipal
   object FDConnection1: TFDConnection
     Params.Strings = (
       
-        'Database=C:\Users\Familia\Documents\Projetos\Projeto_Pesquisa\Ba' +
-        'nco\BANCO.FDB'
+        'Database=C:\Users\Familia\Documents\Projetos\Projeto_Pesquisa\Ca' +
+        'dastros_Delphi\Banco\BANCO.FDB'
       'User_Name=SYSDBA'
       'Password=masterkey'
       'Protocol=TCPIP'
       'Server=LOCALHOST'
       'Port=3050'
       'DriverID=FB')
+    Connected = True
     LoginPrompt = False
     Left = 360
     Top = 8
