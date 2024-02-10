@@ -1,0 +1,35 @@
+unit urelatorio;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, RLReport, dxGDIPlusClasses;
+
+type
+  Tfrmrelatorio = class(TForm)
+    Relgrupos: TRLReport;
+    rlbndtop: TRLBand;
+    img1: TRLImage;
+    rlbl1: TRLLabel;
+    rlbl2: TRLLabel;
+    rlbl3: TRLLabel;
+    rlbl4: TRLLabel;
+    rlbndtop1: TRLBand;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmrelatorio: Tfrmrelatorio;
+
+implementation
+
+uses
+  uprincipal, uconsultasubgrupo;
+
+{$R *.dfm}
+
+end.

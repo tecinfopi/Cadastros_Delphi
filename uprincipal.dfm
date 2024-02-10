@@ -1,7 +1,7 @@
 object Frmprincipal: TFrmprincipal
   Left = 0
   Top = 0
-  Caption = 'USAR COMBOBOX Vers'#227'o 1.5'
+  Caption = 'USAR COMBOBOX Vers'#227'o 1.6'
   ClientHeight = 363
   ClientWidth = 605
   Color = clBtnFace
@@ -332,7 +332,7 @@ object Frmprincipal: TFrmprincipal
       OnClick = BtnSalvarClick
     end
     object BitBtn2: TBitBtn
-      Left = 106
+      Left = 104
       Top = 0
       Width = 101
       Height = 39
@@ -453,7 +453,7 @@ object Frmprincipal: TFrmprincipal
       OnClick = BitBtn2Click
     end
     object BtnExcluir: TBitBtn
-      Left = 208
+      Left = 204
       Top = 0
       Width = 101
       Height = 39
@@ -574,7 +574,7 @@ object Frmprincipal: TFrmprincipal
       OnClick = BtnExcluirClick
     end
     object BtnCancelar: TBitBtn
-      Left = 310
+      Left = 304
       Top = 0
       Width = 101
       Height = 39
@@ -762,7 +762,7 @@ object Frmprincipal: TFrmprincipal
       ExplicitTop = 2
     end
     object BtnImprimir: TBitBtn
-      Left = 409
+      Left = 404
       Top = 0
       Width = 101
       Height = 39
@@ -825,6 +825,7 @@ object Frmprincipal: TFrmprincipal
         FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
         FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
       TabOrder = 5
+      OnClick = BtnImprimirClick
     end
   end
   object Panel2: TPanel

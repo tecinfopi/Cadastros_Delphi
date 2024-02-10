@@ -93,6 +93,7 @@ type
     procedure EdtSubGrupoEnter(Sender: TObject);
     procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
     procedure EdtSubGrupoChange(Sender: TObject);
+    procedure BtnImprimirClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -108,7 +109,7 @@ implementation
 
 {$R *.dfm}
 
-uses uconsultasubgrupo;
+uses uconsultasubgrupo, urelatorio;
 
 procedure TFrmprincipal.BitBtn1Click(Sender: TObject);
 begin
@@ -149,9 +150,9 @@ begin
      ShowMessage('Erro ao atualizar o registro');
      end;
    end;
- PageControl1.ActivePage := TabSheet2;
+ //PageControl1.ActivePage := TabSheet2;
  //btnlocalizarClick(sender);
- limparedits;
+ //limparedits;
 end;
 
 procedure TFrmprincipal.BitBtn3Click(Sender: TObject);
@@ -178,6 +179,11 @@ begin
  //PageControl1.ActivePage := TabSheet2;
  // btnlocalizarClick(sender);
  limparedits;
+end;
+
+procedure TFrmprincipal.BtnImprimirClick(Sender: TObject);
+begin
+ frmrelatorio.Relgrupos.Preview;
 end;
 
 procedure TFrmprincipal.BtnSalvarClick(Sender: TObject);
