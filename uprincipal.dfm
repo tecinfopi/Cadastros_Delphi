@@ -1,7 +1,7 @@
 object Frmprincipal: TFrmprincipal
   Left = 0
   Top = 0
-  Caption = 'USAR COMBOBOX Vers'#227'o 1.6'
+  Caption = 'USAR COMBOBOX Vers'#227'o 1.8'
   ClientHeight = 363
   ClientWidth = 605
   Color = clBtnFace
@@ -27,13 +27,12 @@ object Frmprincipal: TFrmprincipal
     TabOrder = 0
     object TabSheet1: TTabSheet
       Caption = '&Cadastrar - F2'
-      ExplicitTop = 23
       object Label5: TLabel
-        Left = 136
+        Left = 124
         Top = 21
-        Width = 335
+        Width = 383
         Height = 23
-        Caption = 'MANIPUNALDO DADOS NOS EDTIS'
+        Caption = 'CADASTRO/PESQUISAR COM FIREBIRD'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clBlue
         Font.Height = -19
@@ -759,7 +758,6 @@ object Frmprincipal: TFrmprincipal
         3F94003F94003F94003F94003F94003F94FFFFFFFFFFFFFFFFFF}
       TabOrder = 4
       OnClick = BitBtn3Click
-      ExplicitTop = 2
     end
     object BtnImprimir: TBitBtn
       Left = 404
@@ -834,7 +832,7 @@ object Frmprincipal: TFrmprincipal
     Width = 605
     Height = 41
     Align = alTop
-    Caption = 'USO DO COMBOBOX'
+    Caption = 'CADASTROS/PESQUISA'
     Ctl3D = True
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clBlue

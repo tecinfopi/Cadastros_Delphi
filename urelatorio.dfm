@@ -396,7 +396,7 @@ object frmrelatorio: Tfrmrelatorio
         Top = 8
         Width = 209
         Height = 16
-        Caption = 'Sistema de controle - Vers'#227'o 1.7'
+        Caption = 'Sistema de controle - Vers'#227'o 1.8'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clBlack
         Font.Height = -13
@@ -427,9 +427,9 @@ object frmrelatorio: Tfrmrelatorio
       object rlbl4: TRLLabel
         Left = 128
         Top = 74
-        Width = 115
+        Width = 105
         Height = 16
-        Caption = 'Usu'#225'rio.: Valdecy'
+        Caption = 'Usu'#225'rio.: Admin'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clBlack
         Font.Height = -13
@@ -501,9 +501,9 @@ object frmrelatorio: Tfrmrelatorio
       object rlbl7: TRLLabel
         Left = 593
         Top = 3
-        Width = 117
+        Width = 97
         Height = 16
-        Caption = 'C'#243'digo SubGrupo'
+        Caption = 'C'#243'd SubGrupo'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clBlack
         Font.Height = -13
@@ -524,7 +524,7 @@ object frmrelatorio: Tfrmrelatorio
       Borders.DrawRight = False
       Borders.DrawBottom = True
       object rldbtxtCODIGO: TRLDBText
-        Left = 20
+        Left = 25
         Top = 6
         Width = 55
         Height = 16
@@ -533,7 +533,7 @@ object frmrelatorio: Tfrmrelatorio
         Text = ''
       end
       object rldbtxtNOME: TRLDBText
-        Left = 268
+        Left = 271
         Top = 6
         Width = 43
         Height = 16
