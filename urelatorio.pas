@@ -16,6 +16,16 @@ type
     rlbl3: TRLLabel;
     rlbl4: TRLLabel;
     rlbndtop1: TRLBand;
+    rlbl5: TRLLabel;
+    rlbl6: TRLLabel;
+    rlbl7: TRLLabel;
+    rlbndtop2: TRLBand;
+    rldbtxtCODIGO: TRLDBText;
+    rldbtxtNOME: TRLDBText;
+    rldbtxtCODSUBGRUPO: TRLDBText;
+    rlsystmnf1: TRLSystemInfo;
+    rlsystmnf2: TRLSystemInfo;
+    rlsystmnf3: TRLSystemInfo;
   private
     { Private declarations }
   public

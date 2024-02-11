@@ -14,7 +14,7 @@ object frmrelatorio: Tfrmrelatorio
   PixelsPerInch = 96
   TextHeight = 13
   object Relgrupos: TRLReport
-    Left = 8
+    Left = 14
     Top = 0
     Width = 794
     Height = 1123
@@ -392,11 +392,11 @@ object frmrelatorio: Tfrmrelatorio
         Stretch = True
       end
       object rlbl1: TRLLabel
-        Left = 132
+        Left = 128
         Top = 8
         Width = 209
         Height = 16
-        Caption = 'Sistema de controle - Vers'#227'o 1.6'
+        Caption = 'Sistema de controle - Vers'#227'o 1.7'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clBlack
         Font.Height = -13
@@ -405,7 +405,7 @@ object frmrelatorio: Tfrmrelatorio
         ParentFont = False
       end
       object rlbl2: TRLLabel
-        Left = 132
+        Left = 128
         Top = 30
         Width = 134
         Height = 16
@@ -418,14 +418,14 @@ object frmrelatorio: Tfrmrelatorio
         ParentFont = False
       end
       object rlbl3: TRLLabel
-        Left = 132
+        Left = 128
         Top = 52
         Width = 42
         Height = 16
         Caption = 'Todos'
       end
       object rlbl4: TRLLabel
-        Left = 132
+        Left = 128
         Top = 74
         Width = 115
         Height = 16
@@ -437,18 +437,119 @@ object frmrelatorio: Tfrmrelatorio
         Font.Style = [fsBold]
         ParentFont = False
       end
+      object rlsystmnf1: TRLSystemInfo
+        Left = 640
+        Top = 8
+        Width = 41
+        Height = 16
+        Text = ''
+      end
+      object rlsystmnf2: TRLSystemInfo
+        Left = 652
+        Top = 30
+        Width = 42
+        Height = 16
+        Info = itHour
+        Text = ''
+      end
+      object rlsystmnf3: TRLSystemInfo
+        Left = 695
+        Top = 52
+        Width = 95
+        Height = 16
+        Info = itPageNumber
+        Text = ''
+      end
     end
     object rlbndtop1: TRLBand
       Left = 38
       Top = 137
       Width = 718
-      Height = 16
+      Height = 24
       BandType = btHeader
       Borders.Sides = sdCustom
       Borders.DrawLeft = True
       Borders.DrawTop = False
       Borders.DrawRight = True
       Borders.DrawBottom = True
+      object rlbl5: TRLLabel
+        Left = 14
+        Top = 5
+        Width = 49
+        Height = 16
+        Caption = 'C'#243'digo'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object rlbl6: TRLLabel
+        Left = 281
+        Top = 3
+        Width = 66
+        Height = 16
+        Caption = 'Descri'#231#227'o'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object rlbl7: TRLLabel
+        Left = 593
+        Top = 3
+        Width = 117
+        Height = 16
+        Caption = 'C'#243'digo SubGrupo'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+    end
+    object rlbndtop2: TRLBand
+      Left = 38
+      Top = 161
+      Width = 718
+      Height = 25
+      BandType = btSummary
+      Borders.Sides = sdCustom
+      Borders.DrawLeft = False
+      Borders.DrawTop = False
+      Borders.DrawRight = False
+      Borders.DrawBottom = True
+      object rldbtxtCODIGO: TRLDBText
+        Left = 20
+        Top = 6
+        Width = 55
+        Height = 16
+        DataField = 'CODIGO'
+        DataSource = Frmprincipal.DataSource1
+        Text = ''
+      end
+      object rldbtxtNOME: TRLDBText
+        Left = 268
+        Top = 6
+        Width = 43
+        Height = 16
+        DataField = 'NOME'
+        DataSource = Frmprincipal.DataSource1
+        Text = ''
+      end
+      object rldbtxtCODSUBGRUPO: TRLDBText
+        Left = 628
+        Top = 6
+        Width = 106
+        Height = 16
+        DataField = 'CODSUBGRUPO'
+        DataSource = Frmprincipal.DataSource1
+        Text = ''
+      end
     end
   end
 end
