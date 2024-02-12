@@ -1,7 +1,7 @@
 object Frmprincipal: TFrmprincipal
   Left = 0
   Top = 0
-  Caption = 'USAR COMBOBOX Vers'#227'o 1.8'
+  Caption = 'CADASTROS/PESQUISA - FIREBIRD Vers'#227'o 1.8'
   ClientHeight = 363
   ClientWidth = 605
   Color = clBtnFace
@@ -142,6 +142,10 @@ object Frmprincipal: TFrmprincipal
     object TabSheet2: TTabSheet
       Caption = '&Buscar - F3'
       ImageIndex = 1
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object Label1: TLabel
         Left = 5
         Top = 9
