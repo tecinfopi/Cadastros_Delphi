@@ -70,7 +70,7 @@ type
     DSdados: TDataSource;
     zQryCODIGO: TIntegerField;
     zQryNOME: TStringField;
-    BitBtn2: TBitBtn;
+    BtnAlterar: TBitBtn;
     BtnExcluir: TBitBtn;
     BtnCancelar: TBitBtn;
     BitBtn3: TBitBtn;
@@ -86,7 +86,7 @@ type
     procedure BtnSalvarClick(Sender: TObject);
     procedure BitBtn3Click(Sender: TObject);
     procedure DBGrid1DblClick(Sender: TObject);
-    procedure BitBtn2Click(Sender: TObject);
+    procedure BtnAlterarClick(Sender: TObject);
     procedure BtnExcluirClick(Sender: TObject);
     procedure EdtSubGrupoExit(Sender: TObject);
     procedure BtnSubGrupoClick(Sender: TObject);
@@ -99,6 +99,7 @@ type
   public
     { Public declarations }
     procedure limparedits;
+    procedure Habilitar;
     function DescricaoGrupo(aValue : Integer) : String;
   end;
 
@@ -132,9 +133,10 @@ begin
      Label3.Caption := IntToStr(RecordCount);
      if FDQuery1.RecordCount = 0 then
      ShowMessage('Registro não encontrado....');
+     Habilitar;
     end;
   end;
-procedure TFrmprincipal.BitBtn2Click(Sender: TObject);
+procedure TFrmprincipal.BtnAlterarClick(Sender: TObject);
 begin
  with zQry do
      begin
@@ -272,6 +274,12 @@ begin
   Key:= #0;
   Perform(Wm_NextDlgCtl,0,0);
 end;
+end;
+
+procedure TFrmprincipal.Habilitar;
+begin
+ BtnExcluir.Enabled := True;
+ BtnAlterar.Enabled :=True;
 end;
 
 procedure TFrmprincipal.limparedits;

@@ -142,10 +142,6 @@ object Frmprincipal: TFrmprincipal
     object TabSheet2: TTabSheet
       Caption = '&Buscar - F3'
       ImageIndex = 1
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object Label1: TLabel
         Left = 5
         Top = 9
@@ -215,7 +211,7 @@ object Frmprincipal: TFrmprincipal
     TabOrder = 1
     object BtnSalvar: TBitBtn
       Left = 4
-      Top = 0
+      Top = -1
       Width = 101
       Height = 39
       Caption = '&Salvar'
@@ -334,12 +330,13 @@ object Frmprincipal: TFrmprincipal
       TabOrder = 0
       OnClick = BtnSalvarClick
     end
-    object BitBtn2: TBitBtn
+    object BtnAlterar: TBitBtn
       Left = 104
       Top = 0
       Width = 101
       Height = 39
       Caption = '&Alterar'
+      Enabled = False
       Glyph.Data = {
         B60D0000424DB60D000000000000360000002800000030000000180000000100
         180000000000800D000000000000000000000000000000000000FFFFFFFFFFFF
@@ -453,7 +450,7 @@ object Frmprincipal: TFrmprincipal
         FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
       NumGlyphs = 2
       TabOrder = 1
-      OnClick = BitBtn2Click
+      OnClick = BtnAlterarClick
     end
     object BtnExcluir: TBitBtn
       Left = 204
@@ -461,6 +458,7 @@ object Frmprincipal: TFrmprincipal
       Width = 101
       Height = 39
       Caption = '&Excluir'
+      Enabled = False
       Glyph.Data = {
         B60D0000424DB60D000000000000360000002800000030000000180000000100
         180000000000800D000000000000000000000000000000000000FFFFFFFFFFFF
@@ -762,6 +760,7 @@ object Frmprincipal: TFrmprincipal
         3F94003F94003F94003F94003F94003F94FFFFFFFFFFFFFFFFFF}
       TabOrder = 4
       OnClick = BitBtn3Click
+      ExplicitTop = 0
     end
     object BtnImprimir: TBitBtn
       Left = 404

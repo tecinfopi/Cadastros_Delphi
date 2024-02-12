@@ -1,7 +1,7 @@
 object Frmprincipal: TFrmprincipal
   Left = 0
   Top = 0
-  Caption = 'USAR COMBOBOX Vers'#227'o 1.4'
+  Caption = 'CADASTROS/PESQUISA - FIREBIRD Vers'#227'o 1.8'
   ClientHeight = 363
   ClientWidth = 605
   Color = clBtnFace
@@ -28,11 +28,11 @@ object Frmprincipal: TFrmprincipal
     object TabSheet1: TTabSheet
       Caption = '&Cadastrar - F2'
       object Label5: TLabel
-        Left = 136
-        Top = 24
-        Width = 335
+        Left = 124
+        Top = 21
+        Width = 383
         Height = 23
-        Caption = 'MANIPUNALDO DADOS NOS EDTIS'
+        Caption = 'CADASTRO/PESQUISAR COM FIREBIRD'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clBlue
         Font.Height = -19
@@ -41,8 +41,8 @@ object Frmprincipal: TFrmprincipal
         ParentFont = False
       end
       object Label6: TLabel
-        Left = 48
-        Top = 91
+        Left = 52
+        Top = 83
         Width = 50
         Height = 13
         Caption = 'C'#243'digo .: '
@@ -54,8 +54,8 @@ object Frmprincipal: TFrmprincipal
         ParentFont = False
       end
       object Label7: TLabel
-        Left = 48
-        Top = 139
+        Left = 52
+        Top = 131
         Width = 44
         Height = 13
         Caption = 'Nome .: '
@@ -67,8 +67,8 @@ object Frmprincipal: TFrmprincipal
         ParentFont = False
       end
       object lblsubhgrupo: TLabel
-        Left = 48
-        Top = 187
+        Left = 52
+        Top = 179
         Width = 67
         Height = 13
         Caption = 'SubGrupo .: '
@@ -80,8 +80,8 @@ object Frmprincipal: TFrmprincipal
         ParentFont = False
       end
       object EdtCodigo: TEdit
-        Left = 120
-        Top = 88
+        Left = 124
+        Top = 80
         Width = 121
         Height = 21
         CharCase = ecUpperCase
@@ -89,16 +89,16 @@ object Frmprincipal: TFrmprincipal
         TabOrder = 0
       end
       object EdtNome: TEdit
-        Left = 120
-        Top = 133
+        Left = 124
+        Top = 125
         Width = 417
         Height = 21
         CharCase = ecUpperCase
         TabOrder = 1
       end
       object EdtSubGrupo: TEdit
-        Left = 120
-        Top = 184
+        Left = 124
+        Top = 176
         Width = 57
         Height = 21
         NumbersOnly = True
@@ -108,8 +108,8 @@ object Frmprincipal: TFrmprincipal
         OnExit = EdtSubGrupoExit
       end
       object BtnSubGrupo: TBitBtn
-        Left = 182
-        Top = 184
+        Left = 186
+        Top = 176
         Width = 25
         Height = 21
         Caption = '...'
@@ -117,21 +117,35 @@ object Frmprincipal: TFrmprincipal
         OnClick = BtnSubGrupoClick
       end
       object EdTDescricao: TEdit
-        Left = 212
-        Top = 184
+        Left = 216
+        Top = 176
         Width = 325
         Height = 21
-        BevelInner = bvNone
         BevelKind = bkFlat
-        BevelOuter = bvNone
         BorderStyle = bsNone
         Color = clInfoBk
+        Ctl3D = False
+        Enabled = False
+        ParentCtl3D = False
         TabOrder = 4
+      end
+      object dbnvgrnavegador: TDBNavigator
+        Left = 52
+        Top = 203
+        Width = 485
+        Height = 38
+        DataSource = DSdados
+        VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast, nbRefresh]
+        TabOrder = 5
       end
     end
     object TabSheet2: TTabSheet
       Caption = '&Buscar - F3'
       ImageIndex = 1
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object Label1: TLabel
         Left = 5
         Top = 9
@@ -321,7 +335,7 @@ object Frmprincipal: TFrmprincipal
       OnClick = BtnSalvarClick
     end
     object BitBtn2: TBitBtn
-      Left = 106
+      Left = 104
       Top = 0
       Width = 101
       Height = 39
@@ -442,7 +456,7 @@ object Frmprincipal: TFrmprincipal
       OnClick = BitBtn2Click
     end
     object BtnExcluir: TBitBtn
-      Left = 208
+      Left = 204
       Top = 0
       Width = 101
       Height = 39
@@ -563,7 +577,7 @@ object Frmprincipal: TFrmprincipal
       OnClick = BtnExcluirClick
     end
     object BtnCancelar: TBitBtn
-      Left = 310
+      Left = 304
       Top = 0
       Width = 101
       Height = 39
@@ -748,10 +762,9 @@ object Frmprincipal: TFrmprincipal
         3F94003F94003F94003F94003F94003F94FFFFFFFFFFFFFFFFFF}
       TabOrder = 4
       OnClick = BitBtn3Click
-      ExplicitTop = 2
     end
     object BtnImprimir: TBitBtn
-      Left = 409
+      Left = 404
       Top = 0
       Width = 101
       Height = 39
@@ -814,6 +827,7 @@ object Frmprincipal: TFrmprincipal
         FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
         FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
       TabOrder = 5
+      OnClick = BtnImprimirClick
     end
   end
   object Panel2: TPanel
@@ -822,7 +836,7 @@ object Frmprincipal: TFrmprincipal
     Width = 605
     Height = 41
     Align = alTop
-    Caption = 'USO DO COMBOBOX'
+    Caption = 'CADASTROS/PESQUISA'
     Ctl3D = True
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clBlue

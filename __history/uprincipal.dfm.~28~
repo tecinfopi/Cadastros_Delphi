@@ -1,7 +1,7 @@
 object Frmprincipal: TFrmprincipal
   Left = 0
   Top = 0
-  Caption = 'USAR COMBOBOX Vers'#227'o 1.5'
+  Caption = 'CADASTROS/PESQUISA - FIREBIRD Vers'#227'o 1.8'
   ClientHeight = 363
   ClientWidth = 605
   Color = clBtnFace
@@ -28,11 +28,11 @@ object Frmprincipal: TFrmprincipal
     object TabSheet1: TTabSheet
       Caption = '&Cadastrar - F2'
       object Label5: TLabel
-        Left = 136
+        Left = 124
         Top = 21
-        Width = 335
+        Width = 383
         Height = 23
-        Caption = 'MANIPUNALDO DADOS NOS EDTIS'
+        Caption = 'CADASTRO/PESQUISAR COM FIREBIRD'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clBlue
         Font.Height = -19
@@ -121,12 +121,22 @@ object Frmprincipal: TFrmprincipal
         Top = 176
         Width = 325
         Height = 21
-        BevelInner = bvNone
         BevelKind = bkFlat
-        BevelOuter = bvNone
         BorderStyle = bsNone
         Color = clInfoBk
+        Ctl3D = False
+        Enabled = False
+        ParentCtl3D = False
         TabOrder = 4
+      end
+      object dbnvgrnavegador: TDBNavigator
+        Left = 52
+        Top = 203
+        Width = 485
+        Height = 38
+        DataSource = DSdados
+        VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast, nbRefresh]
+        TabOrder = 5
       end
     end
     object TabSheet2: TTabSheet
@@ -320,12 +330,13 @@ object Frmprincipal: TFrmprincipal
       TabOrder = 0
       OnClick = BtnSalvarClick
     end
-    object BitBtn2: TBitBtn
-      Left = 106
+    object BtnAlterar: TBitBtn
+      Left = 104
       Top = 0
       Width = 101
       Height = 39
       Caption = '&Alterar'
+      Enabled = False
       Glyph.Data = {
         B60D0000424DB60D000000000000360000002800000030000000180000000100
         180000000000800D000000000000000000000000000000000000FFFFFFFFFFFF
@@ -439,14 +450,15 @@ object Frmprincipal: TFrmprincipal
         FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
       NumGlyphs = 2
       TabOrder = 1
-      OnClick = BitBtn2Click
+      OnClick = BtnAlterarClick
     end
     object BtnExcluir: TBitBtn
-      Left = 208
+      Left = 204
       Top = 0
       Width = 101
       Height = 39
       Caption = '&Excluir'
+      Enabled = False
       Glyph.Data = {
         B60D0000424DB60D000000000000360000002800000030000000180000000100
         180000000000800D000000000000000000000000000000000000FFFFFFFFFFFF
@@ -563,7 +575,7 @@ object Frmprincipal: TFrmprincipal
       OnClick = BtnExcluirClick
     end
     object BtnCancelar: TBitBtn
-      Left = 310
+      Left = 304
       Top = 0
       Width = 101
       Height = 39
@@ -748,10 +760,9 @@ object Frmprincipal: TFrmprincipal
         3F94003F94003F94003F94003F94003F94FFFFFFFFFFFFFFFFFF}
       TabOrder = 4
       OnClick = BitBtn3Click
-      ExplicitTop = 2
     end
     object BtnImprimir: TBitBtn
-      Left = 409
+      Left = 404
       Top = 0
       Width = 101
       Height = 39
@@ -814,6 +825,7 @@ object Frmprincipal: TFrmprincipal
         FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
         FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
       TabOrder = 5
+      OnClick = BtnImprimirClick
     end
   end
   object Panel2: TPanel
@@ -822,7 +834,7 @@ object Frmprincipal: TFrmprincipal
     Width = 605
     Height = 41
     Align = alTop
-    Caption = 'USO DO COMBOBOX'
+    Caption = 'CADASTROS/PESQUISA'
     Ctl3D = True
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clBlue

@@ -40,7 +40,7 @@ uses
   FireDAC.Phys.FB,
   FireDAC.Phys.FBDef,
   FireDAC.Phys.IBBase,
-  System.IniFiles;
+  System.IniFiles, Vcl.DBCtrls;
 
 type
   TFrmprincipal = class(TForm)
@@ -79,6 +79,8 @@ type
     BtnSubGrupo: TBitBtn;
     EdTDescricao: TEdit;
     Qry: TFDQuery;
+    BtnImprimir: TBitBtn;
+    dbnvgrnavegador: TDBNavigator;
     procedure BitBtn1Click(Sender: TObject);
     procedure FormKeyPress(Sender: TObject; var Key: Char);
     procedure BtnSalvarClick(Sender: TObject);
@@ -91,7 +93,7 @@ type
     procedure EdtSubGrupoEnter(Sender: TObject);
     procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
     procedure EdtSubGrupoChange(Sender: TObject);
-    procedure FormCreate(Sender: TObject);
+    procedure BtnImprimirClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -107,7 +109,7 @@ implementation
 
 {$R *.dfm}
 
-uses uconsultasubgrupo;
+uses uconsultasubgrupo, urelatorio;
 
 procedure TFrmprincipal.BitBtn1Click(Sender: TObject);
 begin
@@ -148,9 +150,9 @@ begin
      ShowMessage('Erro ao atualizar o registro');
      end;
    end;
- PageControl1.ActivePage := TabSheet2;
+ //PageControl1.ActivePage := TabSheet2;
  //btnlocalizarClick(sender);
- limparedits;
+ //limparedits;
 end;
 
 procedure TFrmprincipal.BitBtn3Click(Sender: TObject);
@@ -179,6 +181,11 @@ begin
  limparedits;
 end;
 
+procedure TFrmprincipal.BtnImprimirClick(Sender: TObject);
+begin
+ frmrelatorio.Relgrupos.Preview;
+end;
+
 procedure TFrmprincipal.BtnSalvarClick(Sender: TObject);
 begin
  if  EdtNome.Text = '' then
@@ -199,6 +206,11 @@ begin
     ExecSQL;
     ShowMessage('Registro inserido com sucesso....');
     limparedits;
+    if EdTDescricao.Text = '' then
+    begin
+    ShowMessage('Campos não pode ser vázio');
+    EdTDescricao.SetFocus;
+    end;
   end;
 end;
 
@@ -241,44 +253,6 @@ procedure TFrmprincipal.EdtSubGrupoExit(Sender: TObject);
 begin
   //EdTDescricao.text := DescricaoGrupo(StrToInt(EdtSubGrupo.text));
 end;
-procedure TFrmprincipal.FormCreate(Sender: TObject);
- var
- LIniFile  : TIniFile;
- LDatabase : string;
- LUser_Name: string;
- LPassword : string;
- LProtocolo: string;
- LServidor : string;
- LPorta    : Integer;
- LCaminho  : string;
-begin
- FDConnection1.Connected := False;
-
- try
-  LCaminho := ExtractFileDir(ParamStr(0))+ 'Caminho.ini';
-
-  LIniFile := TIniFile.Create(LCaminho);
-  LIniFile := TIniFile.
-  //LDatabase  :=TIniFile.ReadString('Conexao','Database', LDatabase);
-  //LProtocolo :=TIniFile.ReadString('Conexao','Protocolo', LProtocolo);
-  //LServidor  :=TIniFile.ReadString('Conexao','Servidor', LServidor);
-  //LPorta     :=TIniFile.ReadInteger('Conexao','Porta', LPorta);
-
-  LUser_Name := 'SYSDBA';
-  LPassword  := 'masterkey';
-
-  FDConnection1.params.values['Database']  := LDatabase;
-  FDConnection1.params.values['User_Name'] := LUser_Name;
-  FDConnection1.params.values['Password']  := LPassword;
-  FDConnection1.params.values['Protocolo'] := LProtocolo;
-  FDConnection1.params.values['Servidor']  := LServidor;
-  FDConnection1.params.values['Porta']     := LPorta.ToString;
- finally
- LIniFile.Free;
- end;
- FDConnection1.Connected := True;
-end;
-
 procedure TFrmprincipal.FormKeyDown(Sender: TObject; var Key: Word;
   Shift: TShiftState);
 begin
